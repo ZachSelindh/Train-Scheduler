@@ -1,12 +1,7 @@
 /* CSS file for Train Scheduler web app */
 
-@font-face {
-    font-family: "traffolight";
-    src: url("../fonts/traffolight.otf");
-}
-
 * {
-    font-family: "traffolight" !important;
+    font-family: "Montserrat", "sans-serif" !important;
     box-sizing: border-box;
 }
 
@@ -38,8 +33,13 @@ input {
     margin-left: 10%;
 }
 
-#body-title {
+.remove-button {
+    width: 1em;
+    height: 1em;
+}
 
+.remove-button:hover {
+    cursor: pointer;
 }
 
 #display-title {

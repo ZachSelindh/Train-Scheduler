@@ -6,6 +6,8 @@
         <!-- Boostrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
@@ -30,15 +32,11 @@
         <th>Destination</th>
         <th>First Train Time</th>
         <th>Frequency</th>
+        <th>Remove</th>
        </tr>
       </thread>
       <tbody id="train-table">
-       <tr>
-        <th>TEST</th> 
-        <th>TEST</th> 
-        <th>TEST</th> 
-        <th>TEST</th>   
-       </tr>   
+       <!-- Space for appending new train elements via JS -->
       </tbody>
      </table>
     </div> 
@@ -50,19 +48,19 @@
      <div class="row">
       <div class="col-sm-12 col-md-6">
        <label for="train-name">Train Name</label>
-        <input id="train-name" class="form-control" placeholder="">
+        <input id="train-name" class="form-control" placeholder="" autocomplete="off">
        <label for="train-destination">Destination</label>
-        <input id="train-destination" class="form-control" placeholder="">
+        <input id="train-destination" class="form-control" placeholder="" autocomplete="off">
       </div>
       <div class="col-sm-12 col-md-6">
        <label for="train-first-time">First Train Time</label>
-        <input id="train-first-time" class="form-control" placeholder="">
+        <input id="train-first-time" class="form-control" placeholder="" autocomplete="off">
        <label for="frequency">Frequency</label>
-        <input id="frequecy" class="form-control" placeholder="">
+        <input id="frequency" class="form-control" placeholder="" autocomplete="off">
       </div>     
      </div>
     </div>   
-    <button id="submit-button">Add Train</button>
+    <button type="button" id="submit-button">Add Train</button>
    </form>
   </div>
  </div>
