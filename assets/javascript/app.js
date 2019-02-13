@@ -1,6 +1,12 @@
 /* JS file for Train Scheduler web app */
   
-  
+function clockShow() {
+  $("#clock").html(moment().format("HH:mm:ss"));
+}
+
+clockShow();
+setInterval(clockShow, 1000);
+
   // Initialize Firebase
 var config = {
     apiKey: "AIzaSyA4uCzZTJd4E9hBEYL3qa7iG73JXl3pc0s",
@@ -33,15 +39,21 @@ $("#submit-button").on("click", function(){
 });
 
 database.ref().on("child_added", function(snapshot) {
-  let nameDisplay = snapshot.val().trainName;
-  let destDisplay = snapshot.val().trainDest;
-  let frequency = parseInt(snapshot.val().trainFreq);
-  let startTime = moment(snapshot.val().trainFirstTime, "HHmm");
+  const snap = snapshot.val();
+  let nameDisplay = snap.trainName;
+  let destDisplay = snap.trainDest;
+  let frequency = parseInt(snap.trainFreq);
+    
+  let startTime = moment(snap.trainFirstTime, "HHmm");
     startTime = moment(startTime).format("HH:mm");
       let convertStart = moment(startTime, "HHmm");
-  let timeDifference = moment().diff(moment(convertStart), "minutes");
+
+  let timeDifference = moment().diff(moment(convertStart), "mm");
+
   let remaining = timeDifference % frequency;
+
   let minutesAway = frequency - remaining;
+
   let nextTrain = moment().add(minutesAway, "minutes");
     let nextTrainDisplay = moment(nextTrain).format("HH:mm");
 

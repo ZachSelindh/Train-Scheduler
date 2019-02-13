@@ -30,7 +30,14 @@ input {
 }
 
 #train-title {
+    height: 20%;
     margin-left: 10%;
+}
+
+#time-display {
+    text-align: center;
+    margin-left: 3em;
+    font-size: 100%;
 }
 
 .remove-button {
