@@ -43,14 +43,14 @@ database.ref().on("child_added", function(snapshot) {
   let nameDisplay = snap.trainName;
   let destDisplay = snap.trainDest;
   let frequency = parseInt(snap.trainFreq);
+  let firstTime = parseInt(snap.trainFirstTime.replace(":", ""));
     
-  let startTime = moment(snap.trainFirstTime, "HHmm");
-    startTime = moment(startTime).format("HH:mm");
-      let convertStart = moment(startTime, "HHmm");
+  startTimeMoment = moment(firstTime, "HH:mm");
+    let convertStart = moment(startTimeMoment, "HHmm");
 
-  let timeDifference = moment().diff(moment(convertStart), "mm");
+  let timeDifference = convertStart.diff(moment(), "minutes");
 
-  let remaining = timeDifference % frequency;
+  let remaining = Math.abs(timeDifference % frequency);
 
   let minutesAway = frequency - remaining;
 
